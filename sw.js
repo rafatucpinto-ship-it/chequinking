@@ -1,9 +1,10 @@
 
-const CACHE_NAME = 'checklist-app-v1';
+const CACHE_NAME = 'checklist-app-v2';
+// Use relative paths for caching to support subfolder deployments
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/manifest.json'
+  './',
+  './index.html',
+  './manifest.json'
 ];
 
 // Install SW
@@ -12,6 +13,9 @@ self.addEventListener('install', (event) => {
     caches.open(CACHE_NAME)
       .then((cache) => {
         return cache.addAll(urlsToCache);
+      })
+      .catch((error) => {
+        console.error('Failed to cache files during install:', error);
       })
   );
 });
