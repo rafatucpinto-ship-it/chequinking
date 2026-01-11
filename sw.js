@@ -1,5 +1,5 @@
 
-const CACHE_NAME = 'checklist-app-v2';
+const CACHE_NAME = 'checklist-app-v3';
 // Use relative paths for caching to support subfolder deployments
 const urlsToCache = [
   './',
